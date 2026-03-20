@@ -303,6 +303,19 @@ body::before {
   line-height: 1.8;
 }
 
+.terminal-bio {
+  color: var(--text);
+}
+
+.terminal-cursor {
+  display: inline-block;
+  animation: blink 0.7s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
 .terminal-cmd {
   color: var(--green);
   margin-bottom: 0.5rem;

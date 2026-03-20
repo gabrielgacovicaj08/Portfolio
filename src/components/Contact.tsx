@@ -1,35 +1,35 @@
-import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const links = [
   {
-    label: 'github',
-    href: 'https://github.com/gabrielgacovicaj08',
-    display: 'github.com/gabrielgacovicaj08',
+    label: "github",
+    href: "https://github.com/gabrielgacovicaj08",
+    display: "github.com/gabrielgacovicaj08",
   },
   {
-    label: 'linkedin',
-    href: 'https://linkedin.com/in/gabrielgacovicaj',
-    display: 'linkedin.com/in/gabrielgacovicaj',
+    label: "linkedin",
+    href: "https://www.linkedin.com/in/gabriel-g-86a359139",
+    display: "linkedin.com/in/gabrielgacovicaj",
   },
   {
-    label: 'email',
-    href: 'mailto:gabriel@example.com',
-    display: 'gabriel@example.com',
+    label: "email",
+    href: "mailto:ggacovicaj@gmail.com",
+    display: "ggacovicaj@gmail.com",
   },
-]
+];
 
 export default function Contact() {
-  const ref = useRef<HTMLElement>(null)
-  const rowsRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLElement>(null);
+  const rowsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!ref.current || !rowsRef.current) return
-    const rows = gsap.utils.toArray<HTMLElement>('.contact-row')
-    if (rows.length === 0) return
+    if (!ref.current || !rowsRef.current) return;
+    const rows = gsap.utils.toArray<HTMLElement>(".contact-row");
+    if (rows.length === 0) return;
     gsap.fromTo(
       rows,
       { opacity: 0, x: -40 },
@@ -38,15 +38,15 @@ export default function Contact() {
         x: 0,
         stagger: 0.12,
         duration: 0.4,
-        ease: 'power2.out',
+        ease: "power2.out",
         scrollTrigger: {
           trigger: ref.current,
-          start: 'top 80%',
+          start: "top 80%",
           once: true,
         },
       },
-    )
-  }, [])
+    );
+  }, []);
 
   return (
     <section id="contact" className="contact-section" ref={ref}>
@@ -63,7 +63,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="contact-row"
           >
-            <span className="contact-arrow">{'>'}</span>
+            <span className="contact-arrow">{">"}</span>
             <span className="contact-label">{label}</span>
             <span className="contact-dots"> ............. </span>
             <span className="contact-display">{display}</span>
@@ -76,5 +76,5 @@ export default function Contact() {
         © 2026 Gabriel Gacovicaj // built with React + ♥
       </footer>
     </section>
-  )
+  );
 }
