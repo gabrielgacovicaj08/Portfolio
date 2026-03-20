@@ -23,6 +23,13 @@ body {
   font-family: 'JetBrains Mono', monospace;
   min-height: 100vh;
   position: relative;
+  cursor: none;
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
 }
 
 body::before {
