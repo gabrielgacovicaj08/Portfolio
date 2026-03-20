@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, type Variants } from 'framer-motion'
 
 const lines = [
   { label: 'name', value: 'Gabriel Gacovicaj' },
@@ -9,7 +9,7 @@ const lines = [
   { label: 'fun_fact', value: 'I can type faster in a terminal than most people click.' },
 ]
 
-const contentVariants = {
+const contentVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
